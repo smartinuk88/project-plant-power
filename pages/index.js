@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import ProductFeed from "../components/ProductFeed";
 import Banner from "../components/Banner";
 
-export default function Home({ products }) {
+export default function Home({ products, categories }) {
   return (
     <div className>
       <Head>
@@ -16,10 +16,10 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header categories={categories} />
 
       <div className="flex">
-        <Sidebar />
+        <Sidebar categories={categories} />
 
         <main className="max-w-6xl">
           <Banner />
@@ -35,9 +35,14 @@ export async function getServerSideProps(context) {
     (res) => res.json()
   );
 
+  const categories = await fetch(
+    "https://fakestoreapi.com/products/categories"
+  ).then((res) => res.json());
+
   return {
     props: {
       products,
+      categories,
     },
   };
 }

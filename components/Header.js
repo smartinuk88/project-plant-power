@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "../assets/PPP-Logo.png";
 import { SearchIcon, ShoppingCartIcon } from "@heroicons/react/outline";
 
-function Header() {
+function Header({ categories }) {
   return (
     <header className="shadow-md bg-white sticky z-50 top-0 left-0 p-3">
       <div className="flex h-10 justify-between items-center ">
@@ -29,8 +29,9 @@ function Header() {
               id="categories"
             >
               <option value="allCategories">All categories</option>
-              <option value="food">Food</option>
-              <option value="clothing">Clothing</option>
+              {categories.map((category) => (
+                <option value={category}>{category}</option>
+              ))}
             </select>
             <div className="flex w-8 bg-green-400 transition-all hover:bg-green-500 cursor-pointer items-center justify-center">
               <SearchIcon className="h-5 w-5" />

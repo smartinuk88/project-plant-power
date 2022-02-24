@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Banner() {
   return (
-    <div className="border border-black rounded m-10  text-left">
+    <div className="border border-black rounded mx-5 my-10 md:col-span-full text-left">
       <Carousel
         autoPlay
         infiniteLoop
