@@ -6,7 +6,7 @@ import Banner from "../components/Banner";
 
 export default function Home({ products, categories }) {
   return (
-    <div className>
+    <div>
       <Head>
         <title>Project Plant Power</title>
         <meta

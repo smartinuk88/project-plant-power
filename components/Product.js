@@ -23,6 +23,7 @@ function Product({ id, title, price, description, category, image }) {
       description,
       category,
       image,
+      rating,
     };
 
     // Dispatch product to redux store

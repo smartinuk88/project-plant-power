@@ -51,7 +51,7 @@ function Header({ categories }) {
         <div className="flex space-x-5 h-full items-center">
           <Link href="/checkout">
             <div className="w-10 relative cursor-pointer h-full flex items-center justify-center">
-              <span className="absolute top-0 right-0 h-4 w-4 bg-green-500 text-center text-xs rounded-full font-bold">
+              <span className="absolute border border-black top-0 right-0 h-4 w-4 bg-green-500 text-center text-xs rounded-full font-bold">
                 {items.length}
               </span>
               <ShoppingCartIcon className="h-10 w-10" />
